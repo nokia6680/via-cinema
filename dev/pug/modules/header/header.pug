@@ -1,0 +1,11 @@
+-var navLinks = [{link: '#about', name: 'О проекте', type: '--about'}, {link: '#now', name: 'Сейчас в кино', type: '--now'}, {link: '#program', name: 'Расписание', type: '--program'}, {link: '#buy', name: 'Купить билет', type: '--buy'}]
+
+header.header
+    nav.header__nav.nav
+        a(href="" target="_self").nav__logo
+            img(src="static/images/content/nick-logo.svg" alt="Nick JR в кино").nav__logo-image
+        
+        ul.nav__list
+            for i in navLinks
+                li(class="nav__item " +i.type)
+                    a(href="" +i.link target="_self").nav__link=i.name

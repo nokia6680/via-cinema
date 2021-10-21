@@ -1,0 +1,45 @@
+mixin blogItem(name, link, image, category)
+    li(class="blog__list-item " +category)
+        a(href="" +link target="_self").blog__list-link
+            picture.blog__list-frame
+                source(srcset="static/images/content/" +image + '.webp' type="image/webp")
+                img(src="static/images/content/" +image + '.jpg' alt="" +name).blog__list-image
+            h3.blog__list-name=name
+
+mixin breadcrumb(levels)
+    .breadcrumbs(aria-label="breadcrumb")
+        ol.breadcrumbs__list(itemscope itemtype="http://schema.org/BreadcrumbList")
+            each level, index in levels
+                //- Index is zero based
+                - var count = index+1
+
+                li.breadcrumbs__item(itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem")
+                    a(href="#{level[1]}" aria-level!=count).breadcrumbs__link
+                        span(itemprop="name") #{level[0]}
+
+                        //- Don't show the divider on the last loop
+                    if count < levels.length
+                        i.breadcrumbs__symbol(aria-hidden="true").breadcrumbs__divider —
+                    meta(itemprop="position" content!=count)
+
+mixin similarItem(image, link, name, type)
+    div(class="similar__list-item " +type)
+        a(href="" +link target="_self").similar__list-link
+            picture.similar__list-frame
+                source(type="image/webp" media="(min-width: 1440px)" srcset="static/images/content/" +image +"-1440.webp")
+                source(media="(min-width: 1440px)" srcset="static/images/content/" +image +"-1440.jpg")
+                source(type="image/webp" srcset="static/images/content/" +image +"-mb.webp")
+                img(itemprop="image" src="static/images/content/" +image +"-mb.jpg").similar__list-image
+            h3.similar__list-name=name
+            
+
+mixin otherItem(image, link, name, about, type)
+    li(class="other__list-item " +type)
+        a(href="" +link target="_self").other__list-link
+            picture.other__list-frame
+                source(type="image/webp" media="(min-width: 1440px)" srcset="static/images/content/" +image +"-1440.webp")
+                source(media="(min-width: 1440px)" srcset="static/images/content/" +image +"-1440.jpg")
+                source(type="image/webp" srcset="static/images/content/" +image +"-mb.webp")
+                img(itemprop="image" src="static/images/content/" +image +"-mb.jpg").other__list-image
+            h3.other__list-name=name
+            p.other__list-about=about
