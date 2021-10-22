@@ -1,12 +1,9 @@
 // Colors
 $white: #fff;
 $black: #010101;
-$bordo: #60002B;
-$light-bordo: #72273F;
-$gray: #4D4D4F;
+$gray: #F0F2F3;
 $olive: #D9D1C7;
 $light-gray: #808080;
-$blue: #0038FF;
 // Sizes
 $base-font-size: 16px;
 
@@ -21,3 +18,5 @@ $primary-font: 'Jost', sans-serif;
 
 $text-black: $black;
 $text-white: $white;
+
+$cubic: cubic-bezier(0.4, 0.01, 0.165, 0.99);

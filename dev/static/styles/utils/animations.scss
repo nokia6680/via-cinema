@@ -1,14 +1,14 @@
-@keyframes fade-in {
+@keyframes rotate-and-blink {
     0% {
-        opacity: 0;
-        transform: translateX(100%);
-        transform-origin: left;
+        transform: translate(0, 0) rotate(0deg);
+        filter: drop-shadow(0 0 0 rgba(255, 255, 255, 0));
+        transform-origin: center;
     }
 
     100% {
-        opacity: 1;
-        transform: translateX(0);
-        transform-origin: left;
+        transform: translate(15px, 15px) rotate(360deg);
+        filter: drop-shadow(0 0 0 rgba(255, 255, 255, 0.5));
+        transform-origin: center;
     }
 }
 

@@ -2,6 +2,7 @@
 
 header.header
     nav.header__nav.nav
+        span.nav__age 0
         a(href="" target="_self").nav__logo
             img(src="static/images/content/nick-logo.svg" alt="Nick JR в кино").nav__logo-image
         
@@ -9,3 +10,4 @@ header.header
             for i in navLinks
                 li(class="nav__item " +i.type)
                     a(href="" +i.link target="_self").nav__link=i.name
+        button(type="button").nav__toggle.js-toggle

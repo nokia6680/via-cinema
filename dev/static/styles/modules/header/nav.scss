@@ -1,0 +1,106 @@
+.nav {
+    width: 100%;
+
+    @include flex-setting(row, space-between, center);
+
+    padding: 1.875rem 1.125rem 1.625rem 1.125rem;
+
+    &__age {
+        @include flex-setting(column, center, center);
+        @include font-setting($primary-font, 1.875rem, 2rem, 400, $gray);
+
+        padding: 0.1875rem 1.375rem 0.1875rem 0.3125rem;
+
+        border: 2px solid $gray;
+
+        position: relative;
+
+        opacity: 0.6;
+
+        &::after {
+            position: absolute;
+            content: '+';
+
+            width: 1rem;
+            height: 1rem;
+
+            top: 0rem;
+
+            right: 0.375rem;
+        }
+    }
+
+    &__logo {
+        width: 148px;
+        height: 60px;
+        object-fit: contain;
+    }
+
+    &__list {
+        position: absolute;
+        max-height: 0;
+        overflow: hidden;
+    }
+
+    &__toggle {
+        display: block;
+        cursor: pointer;
+        position: relative;
+        border: none;
+        background-color: transparent;
+        padding: 0;
+        width: 40px;
+        height: 36px;
+        background-image: url("data:image/svg+xml,%3Csvg width='40' height='8' viewBox='0 0 40 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='40' height='8' fill='%23F0F2F3'/%3E%3C/svg%3E");
+        background-position: 50% 50%;
+        background-size: 40px 8px;
+        background-repeat: no-repeat;
+        cursor: pointer;
+
+        &::after {
+            position: absolute;
+            content: '';
+            width: 100%;
+            height: 8px;
+            background-color: $gray;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            transition: 0.4s $cubic;
+        }
+
+        &::before {
+            position: absolute;
+            content: '';
+            width: 100%;
+            height: 8px;
+            background-color: $gray;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            transition: 0.4s $cubic;
+        }
+
+        &.opened {
+            background-image: none;
+
+            &::after,
+            &::before {
+                width: 40px;
+                transition: 0.4s $cubic;
+            }
+
+            &::after {
+                transform: translateX(-50%) rotate(45deg);
+                top: 14px;
+                transition: 0.4s $cubic;
+            }
+
+            &::before {
+                transform: translateX(-50%) rotate(135deg);
+                bottom: 14px;
+                transition: 0.4s $cubic;
+            }
+        }
+    }
+}

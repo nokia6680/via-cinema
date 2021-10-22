@@ -1,0 +1,166 @@
+.about {
+    width: 100%;
+
+    @include flex-setting(column, center, center);
+
+    padding: 2.625rem 1.25rem 9.25rem 1.25rem;
+
+    background-image: url('../images/content/about-bg-mb.jpg');
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    position: relative;
+
+    &__balls {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+
+        overflow: hidden;
+
+        .oball-1 {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            animation: 5s rotate-and-blink infinite alternate;
+        }
+
+        .oball-2 {
+            position: absolute;
+            top: 1.875rem;
+            left: -3.125rem;
+            animation: 12s rotate-and-blink infinite alternate;
+        }
+
+        .oball-3 {
+            position: absolute;
+            top: 16rem;
+            right: 1.5625rem;
+            animation: 8s rotate-and-blink infinite alternate;
+        }
+
+        .oball-4 {
+            position: absolute;
+            bottom: 1.875rem;
+            left: -2.125rem;
+            animation: 16s rotate-and-blink infinite alternate;
+        }
+
+        .oball-5 {
+            position: absolute;
+            bottom: 5.125rem;
+            right: 1.25rem;
+            animation: 7s rotate-and-blink infinite alternate;
+        }
+    }
+
+    &__wrapper {
+        width: 100%;
+
+        @include flex-setting(column, flex-start, center);
+
+        z-index: 2;
+    }
+
+    &__logo {
+        width: 195px;
+        height: 79px;
+
+        object-fit: contain;
+
+        margin-bottom: 2.0625rem;
+    }
+
+    &__frame {
+        position: absolute;
+        bottom: -0.6875rem;
+        left: 50%;
+        transform: translateX(-50%);
+
+        width: 293px;
+        height: 115px;
+
+        &-image {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+    }
+
+    &__info {
+        width: 100%;
+
+        @include flex-setting(column, flex-start, center);
+    }
+
+    &__intro {
+        @include font-setting($primary-font, 1rem, 1.4375rem, 600, $gray);
+        text-align: left;
+        margin-bottom: 1.25rem;
+    }
+
+    &__description {
+        @include font-setting($primary-font, 1rem, 1.4375rem, 400, $gray);
+        text-align: left;
+        margin-bottom: 2.0625rem;
+    }
+
+    &__btn {
+        @include flex-setting(column, center, center);
+        @include font-setting($primary-font, 0.75rem, 1.0625rem, 600, $gray);
+        text-decoration: none;
+        text-transform: uppercase;
+
+        width: 198px;
+        height: 38px;
+
+        background: #361956;
+        box-shadow: inset -2px -2px 4px #291143, inset 2px 2px 4px #572C86;
+        border-radius: 40px;
+        padding-right: 1.75rem;
+
+        position: relative;
+
+        z-index: 2;
+
+        &::before {
+            position: absolute;
+            content: '';
+
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+            width: 208px;
+            height: 46px;
+
+            background: rgba(240, 242, 243, 0.1);
+            box-shadow: 0px 4px 10px #C84A07;
+            border-radius: 24px;
+
+            z-index: -1;
+        }
+
+        &::after {
+            position: absolute;
+            content: '';
+
+            width: 1rem;
+            height: 1rem;
+
+            background-image: url("data:image/svg+xml,%3Csvg width='17' height='9' viewBox='0 0 17 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M16.4073 4.26L12.8518 1.01921C12.7531 0.938972 12.6451 0.923535 12.5278 0.972927C12.4106 1.02238 12.3518 1.11183 12.3518 1.24152V3.31561H0.796289C0.709828 3.31561 0.638804 3.34334 0.583315 3.39889C0.527858 3.45441 0.5 3.52544 0.5 3.61183V5.38957C0.5 5.47593 0.527728 5.54695 0.583283 5.60241C0.638902 5.65793 0.709926 5.68566 0.796257 5.68566H12.3518V7.75971C12.3518 7.88334 12.4108 7.97279 12.5279 8.02818C12.6453 8.07776 12.7533 8.05902 12.852 7.97279L16.4075 4.69477C16.4692 4.63308 16.5 4.55914 16.5 4.47265C16.5 4.39261 16.469 4.32171 16.4073 4.26Z' fill='%23EFF1F3'/%3E%3C/svg%3E");
+            background-position: 50% 50%;
+            background-repeat: no-repeat;
+            background-size: contain;
+
+            top: 50%;
+            right: 1.75rem;
+            transform: translateY(-50%);
+        }
+    }
+}
