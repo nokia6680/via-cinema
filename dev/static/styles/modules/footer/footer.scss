@@ -44,3 +44,13 @@
         text-transform: uppercase;
     }
 }
+
+@include min-screen(1440px) {
+    .footer {
+        padding: 1.375rem 0;
+
+        &__wrapper {
+            max-width: 1200px;
+        }
+    }
+}

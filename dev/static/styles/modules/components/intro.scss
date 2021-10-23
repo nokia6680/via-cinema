@@ -28,6 +28,10 @@
         padding: 0 1.125rem;
     }
 
+    &__age {
+        display: none;
+    }
+
     &__title {
         @include font-setting($primary-font, 2.25rem, 2.375rem, 900, $gray);
         text-align: center;
@@ -50,7 +54,7 @@
 
     &__btn {
         @include flex-setting(column, center, center);
-        @include font-setting($primary-font, 0.75rem, 1.0625rem, 400, $gray);
+        @include font-setting($primary-font, 0.75rem, 1.0625rem, 600, $gray);
         text-transform: uppercase;
         text-decoration: none;
 
@@ -151,6 +155,129 @@
             bottom: 0;
             left: 50%;
             transform: translateX(-50%);
+        }
+    }
+}
+
+@include min-screen(1440px) {
+    .intro {
+        padding: 15.4375rem 0 3.375rem 0;
+        background-image: url('../images/content/intro-bg-lg.jpg');
+        --widthLight: calc(100% - 1260px);
+
+        &::after {
+            position: absolute;
+            content: '';
+
+            width: 601px;
+            height: 515px;
+
+            background-position: 50% 50%;
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-image: url('../images/content/light-lg.png');
+
+            top: 0;
+            right: calc(var(--widthLight) / 2);
+            z-index: 0;
+        }
+
+        &__wrapper {
+            display: grid;
+            grid-template-columns: 590px 1fr;
+            justify-content: center;
+            align-items: center;
+
+            --widthWrapRight: calc(100% - 1376px);
+            --widthWrapLeft: calc(100% - 1200px);
+            padding-left: calc(var(--widthWrapLeft) / 2);
+            padding-right: calc(var(--widthWrapRight) / 2);
+
+            position: relative;
+        }
+
+        &__info {
+            width: 100%;
+            align-items: flex-start;
+            margin-bottom: 0;
+            padding: 0;
+
+            position: relative;
+        }
+
+        &__age {
+
+            position: absolute;
+            top: 0;
+            right: 0;
+            @include flex-setting(column, center, center);
+            @include font-setting($primary-font, 2rem, 1, 400, rgba(240, 242, 243, 0.6));
+
+            width: 51px;
+            height: 42px;
+
+            border: 2px solid rgba(240, 242, 243, 0.6);
+        }
+
+        &__title {
+            font-size: 4rem;
+            line-height: 4.75rem;
+            text-align: left;
+            margin-bottom: 1.375rem;
+        }
+
+        &__description {
+            font-size: 1.125rem;
+            line-height: 1.625rem;
+            text-align: left;
+            margin-bottom: 2.875rem;
+            max-width: 75%;
+        }
+
+        &__controls {
+            justify-content: flex-start;
+        }
+
+        &__btn {
+            width: 188px;
+
+            &--buy {
+                width: 198px;
+                margin-right: 2.8125rem;
+
+                &::before {
+                    width: 208px;
+                    height: 46px;
+                }
+
+                &::after {
+                    right: 2.5rem;
+                }
+            }
+        }
+
+        &__frame {
+            position: absolute;
+            top: -2.5rem;
+            right: calc(var(--widthWrapRight) / 2);
+
+            min-width: 758px;
+            max-width: 758px;
+            min-height: 507px;
+            height: 507px;
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+
+        &__more {
+            bottom: 3.125rem;
+            font-size: 0.875rem;
+            padding-bottom: 1rem;
+
+            &::after {
+                width: 16px;
+                height: 16px;
+            }
         }
     }
 }

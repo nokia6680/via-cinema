@@ -57,6 +57,10 @@
             right: 1.25rem;
             animation: 7s rotate-and-blink infinite alternate;
         }
+
+        .oball-6 {
+            display: none;
+        }
     }
 
     &__wrapper {
@@ -161,6 +165,106 @@
             top: 50%;
             right: 1.75rem;
             transform: translateY(-50%);
+        }
+    }
+}
+
+@include min-screen(1440px) {
+    .about {
+        height: 100vh;
+        padding: 8rem 0 3rem 0;
+        background-image: url('../images/content/about-bg-lg.jpg');
+
+        &__balls {
+            .oball-1 {
+                width: 145px;
+                height: 145px;
+                top: 4.75rem;
+                right: 15rem;
+            }
+
+            .oball-2 {
+                width: 271px;
+                height: 271px;
+                top: auto;
+                bottom: 6.5rem;
+                left: -4.375rem;
+            }
+
+            .oball-3 {
+                width: 57px;
+                height: 57px;
+                top: auto;
+                right: auto;
+                left: 19.5rem;
+                bottom: 9rem;
+            }
+
+            .oball-4 {
+                width: 235px;
+                height: 235px;
+                right: -3.375rem;
+                bottom: 7.625rem;
+                left: auto;
+            }
+
+            .oball-5 {
+                width: 115px;
+                height: 115px;
+                bottom: 3rem;
+                right: 24.125rem;
+            }
+
+            .oball-6 {
+                position: absolute;
+                display: block;
+                top: 8rem;
+                left: 26.625rem;
+                animation: 18s rotate-and-blink infinite alternate;
+            }
+        }
+
+        &__wrapper {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-start;
+
+            --width: calc(100% - 1200px);
+            padding-left: calc(var(--width) / 2);
+            padding-right: calc(var(--width) / 2);
+        }
+
+        &__logo {
+            width: 335px;
+            height: 136px;
+            margin-bottom: 0;
+        }
+
+        &__frame {
+            position: relative;
+            bottom: auto;
+            left: auto;
+            transform: none;
+            min-width: 428px;
+            width: 428px;
+            height: 607px;
+        }
+
+        &__info {
+            align-self: center;
+            align-items: flex-start;
+        }
+
+        &__intro {
+            font-size: 0.875rem;
+            line-height: 1.25rem;
+            margin-bottom: 1.5rem;
+        }
+
+        &__description {
+            font-size: 0.875rem;
+            line-height: 1.25rem;
+            margin-bottom: 3.125rem;
         }
     }
 }

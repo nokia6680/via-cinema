@@ -123,3 +123,88 @@
         }
     }
 }
+
+@include min-screen(1440px) {
+    .program {
+        height: 100vh;
+        padding: 6.75rem 0;
+
+        &__wrapper {
+            width: 100%;
+
+            display: grid;
+            grid-template-columns: 1fr 587px;
+            grid-column-gap: 3.5rem;
+            align-items: center;
+
+            --width: calc(100% - 1200px);
+            padding-left: calc(var(--width) / 2);
+            padding-right: calc(var(--width) / 2);
+        }
+
+        &__frame {
+            @include flex-setting(column, center, center);
+            position: relative;
+
+            svg {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+
+                z-index: 0;
+
+                animation: 8s rotate infinite alternate;
+            }
+
+            &-image {
+                z-index: 1;
+                margin-top: 4rem;
+            }
+        }
+
+        &__item {
+            padding-bottom: 1.25rem;
+            margin-bottom: 1.25rem;
+
+            &:last-child {
+                margin-bottom: 0;
+                padding-bottom: 0;
+                border-bottom: none;
+            }
+        }
+
+        &__head {
+            margin-bottom: 1.25rem;
+        }
+
+
+        &__dates {
+            margin-left: auto;
+            margin-right: 11.5rem;
+        }
+
+        &__name {
+            font-size: 2rem;
+            line-height: 2.25rem;
+            margin-bottom: 1.25rem;
+            max-width: 485px;
+        }
+
+        &__times {
+            &-item {
+                height: 36px;
+                padding: 0 1.3125rem;
+                margin-right: 2rem;
+
+                &:last-child {
+                    margin-right: 0;
+                }
+
+                span {
+                    color: $white;
+                }
+            }
+        }
+    }
+}
