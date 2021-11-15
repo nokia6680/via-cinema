@@ -129,7 +129,7 @@
         padding-right: 1.75rem;
 
         position: relative;
-
+        transition: 0.4s $cubic;
         z-index: 2;
 
         &::before {
@@ -165,6 +165,13 @@
             top: 50%;
             right: 1.75rem;
             transform: translateY(-50%);
+        }
+
+        &:hover,
+        &:active {
+            background: #E72C85;
+            box-shadow: inset -2px -2px 4px #B30759, inset 2px 2px 4px #FF71B4;
+            transition: 0.4s $cubic;
         }
     }
 }

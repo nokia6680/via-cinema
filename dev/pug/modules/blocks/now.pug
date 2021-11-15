@@ -58,5 +58,7 @@ section.now#now
                 a(href="" target="_self").now__btn.now__btn--buy Купить билет
                 a(href="#program" target="_self").now__btn Расписание
         picture.now__frame
-            source(scrset="static/images/content/now-poster.webp" type="image/webp")
-            img(src="static/images/content/now-poster.png" alt="now-show-name").now__frame-image
+            source(media="(min-width: 1440px)" srcset="static/images/content/now-poster.webp" type="image/webp")
+            source(media="(min-width: 1440px)" srcset="static/images/content/now-poster.png")
+            source(scrset="static/images/content/now-poster-mb.webp" type="image/webp")
+            img(src="static/images/content/now-poster-mb.png" alt="now-show-name").now__frame-image

@@ -2,7 +2,7 @@
     width: 100%;
 
     @include flex-setting(column, center, center);
-    padding: 2.625rem 1.25rem 2.25rem 1.25rem;
+    padding: 2.625rem 0 0 0;
 
     background-image: url('../images/content/program-bg.jpg');
     background-position: top center;
@@ -17,29 +17,48 @@
         @include flex-setting(column, flex-start, center);
     }
 
+    &__title {
+        order: 1;
+        @include font-setting($primary-font, 1.5rem, 2rem, 800, #FEC42A);
+        text-transform: uppercase;
+        overflow: hidden;
+        white-space: nowrap;
+        max-width: 178px;
+
+        margin-bottom: 1rem;
+    }
+
     &__frame {
-        display: none;
+        order: 3;
+        position: relative;
+
+        svg {
+            display: none;
+        }
     }
 
     &__list {
+        order: 2;
         width: 100%;
 
         @include flex-setting(column, flex-start, center);
+
+        margin-bottom: 3rem;
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
     }
 
     &__item {
         width: 100%;
         @include flex-setting(column, flex-start, flex-start);
 
-        padding-bottom: 1rem;
-        margin-bottom: 1rem;
+        padding-bottom: 1.75rem;
+        margin-bottom: 1.75rem;
 
         border-bottom: 1px solid rgba(240, 242, 243, 0.6);
 
         &:last-child {
             margin-bottom: 0;
-            padding-bottom: 0;
-            border-bottom: none;
         }
     }
 
@@ -92,7 +111,8 @@
     }
 
     &__name {
-        @include font-setting($primary-font, 1.375rem, 1.5rem, 900, $gray);
+        @include font-setting($primary-font, 1.5rem, 1.87
+        05rem, 900, $gray);
         text-transform: uppercase;
         text-align: left;
         margin-bottom: 1rem;
@@ -101,17 +121,17 @@
     &__times {
         width: 100%;
 
-        @include flex-setting(row, flex-start, center);
+        @include flex-setting(row, space-between, center);
 
         &-item {
             @include flex-setting(column, center, center);
 
-            height: 30px;
-            padding: 0 0.625rem;
+            height: 36px;
+            padding: 0 1.25rem;
 
             border: 2px solid $gray;
 
-            margin-right: 0.625rem;
+            margin-right: 1.875rem;
 
             &:last-child {
                 margin-right: 0;

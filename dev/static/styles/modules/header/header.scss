@@ -9,8 +9,7 @@
     left: 0;
     right: 0;
 
-    z-index: 2;
-
+    z-index: 4;
 
     &__nav {
         width: 100%;
@@ -18,5 +17,5 @@
 }
 
 @include min-screen(1440px) {
-    
+
 }

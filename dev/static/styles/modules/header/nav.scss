@@ -38,8 +38,74 @@
 
     &__list {
         position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
         max-height: 0;
         overflow: hidden;
+
+        background-color: #1C1C1C;
+        pointer-events: none;
+
+        transition: 0.4s $cubic;
+
+        &.opened {
+            transition: 0.4s $cubic;
+            max-height: 500px;
+            pointer-events: all;
+            padding: 8.125rem 0 0 0;
+
+            .nav__item {
+                pointer-events: auto;
+                transform: scale(1) translateY(0px);
+                will-change: transform;
+                opacity: 1;
+
+                @for $i from 1 through $menuItems {
+                    &:nth-child(#{$i}) {
+                        transition-delay: #{0.06 * $i+0.2}s;
+                    }
+                }
+            }
+        }
+    }
+
+    &__item {
+        @include flex-setting(column, flex-start, center);
+        width: 100%;
+        position: relative;
+
+        transform: scale(1.15) translateY(-30px);
+        opacity: 0;
+        transition: transform 0.5s $cubic, opacity 0.6s $cubic;
+        padding: 0.75rem 0;
+        border-top: 1px solid $white;
+        margin-bottom: 0;
+        background-color: #1C1C1C;
+
+        @for $i from 1 through $menuItems {
+            &:nth-child(#{$i}) {
+                transition-delay: #{0.56 - ($i * 0.07)}s;
+            }
+        }
+
+        &:hover,
+        &:active {
+            background-color: #F26822;
+            transition: 0.4s $cubic;
+        }
+
+        &:last-of-type {
+            border-bottom: 1px solid $white;
+        }
+    }
+
+    &__link {
+        @include font-setting($primary-font, 1.5rem, 2.375, 600, $white);
+        text-decoration: none;
+        text-transform: uppercase;
+        transition: 0.4s $cubic;
     }
 
     &__toggle {
