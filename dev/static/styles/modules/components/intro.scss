@@ -13,6 +13,22 @@
 
     position: relative;
 
+    &::before {
+        position: absolute;
+        content: '';
+
+        width: 86px;
+        height: 42px;
+
+        background-image: url('../images/content/pioner.png');
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+        background-size: contain;
+
+        bottom: 5vh;
+        left: 1.25rem;
+    }
+
     &__wrapper {
         width: 100%;
         height: 100%;
@@ -178,18 +194,16 @@
     }
 }
 
-@include min-screen(1440px) {
+@include min-screen(768px) {
     .intro {
-        padding: 15.4375rem 0 3.375rem 0;
-        background-image: url('../images/content/intro-bg-lg.jpg');
-        --widthLight: calc(100% - 1260px);
+        padding: 10rem 0 7.5rem 0;
 
         &::after {
             position: absolute;
             content: '';
 
-            width: 601px;
-            height: 515px;
+            width: 320px;
+            height: 274px;
 
             background-position: 50% 50%;
             background-repeat: no-repeat;
@@ -197,9 +211,100 @@
             background-image: url('../images/content/light-lg.png');
 
             top: 0;
+            --widthLight: calc(100% - 672px);
             right: calc(var(--widthLight) / 2);
             z-index: 0;
         }
+
+
+        &::before {
+            width: 116px;
+            height: 56px;
+            bottom: 7%;
+            left: 2.5rem;
+        }
+
+        &__info {
+            margin-bottom: 1.25rem;
+            position: relative;
+            max-width: 690px;
+        }
+
+        &__age {
+            position: absolute;
+            top: 0;
+            right: 0;
+            @include flex-setting(column, center, center);
+            @include font-setting($primary-font, 2rem, 1, 400, rgba(240, 242, 243, 0.6));
+
+            width: 50px;
+            height: 36px;
+
+            border: 2px solid rgba(240, 242, 243, 0.6);
+        }
+
+        &__title {
+            font-size: 4rem;
+            line-height: 4.25rem;
+            text-align: center;
+            margin-bottom: 0.5rem;
+        }
+
+        &__description {
+            font-size: 1.25rem;
+            line-height: 1.5rem;
+            text-align: center;
+            max-width: 510px;
+        }
+
+        &__btn {
+            width: 188px;
+
+            &--buy {
+                width: 198px;
+                margin-right: 3.75rem;
+
+                &::before {
+                    width: 208px;
+                    height: 46px;
+                }
+
+                &::after {
+                    right: 2.5rem;
+                }
+            }
+        }
+
+        &__frame {
+            min-width: 648px;
+            max-width: 648px;
+            min-height: 466px;
+            height: 466px;
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+    }
+}
+
+@include min-screen(1440px) {
+    .intro {
+        padding: 15.4375rem 0 3.375rem 0;
+        background-image: url('../images/content/intro-bg-lg.jpg');
+
+        &::after {
+            --widthLight: calc(100% - 1260px);
+            width: 601px;
+            height: 515px;
+        }
+
+        &::before {
+            width: 142px;
+            height: 69px;
+            bottom: 20%;
+            --widthLeft: calc(100% - 1200px);
+            left: calc(var(--widthLeft) / 2);
+        }
+
 
         &__wrapper {
             display: grid;
@@ -225,21 +330,11 @@
         }
 
         &__age {
-
-            position: absolute;
-            top: 0;
-            right: 0;
-            @include flex-setting(column, center, center);
-            @include font-setting($primary-font, 2rem, 1, 400, rgba(240, 242, 243, 0.6));
-
             width: 51px;
             height: 42px;
-
-            border: 2px solid rgba(240, 242, 243, 0.6);
         }
 
         &__title {
-            font-size: 4rem;
             line-height: 4.75rem;
             text-align: left;
             margin-bottom: 1.375rem;
@@ -250,7 +345,7 @@
             line-height: 1.625rem;
             text-align: left;
             margin-bottom: 2.875rem;
-            max-width: 75%;
+            max-width: 85%;
         }
 
         &__controls {
@@ -258,20 +353,8 @@
         }
 
         &__btn {
-            width: 188px;
-
             &--buy {
-                width: 198px;
                 margin-right: 2.8125rem;
-
-                &::before {
-                    width: 208px;
-                    height: 46px;
-                }
-
-                &::after {
-                    right: 2.5rem;
-                }
             }
         }
 
@@ -284,8 +367,6 @@
             max-width: 758px;
             min-height: 507px;
             height: 507px;
-            margin-top: 0;
-            margin-bottom: 0;
         }
 
         &__more {

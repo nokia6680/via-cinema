@@ -228,6 +228,75 @@
     }
 }
 
+@include min-screen(768px) {
+    .now {
+        padding: 5.5rem 0 7.5rem 0;
+
+        position: relative;
+
+        &__wrapper {
+            max-width: 688px;
+        }
+
+        &__head {
+            margin-bottom: 1.5rem;
+        }
+
+        &__dates {
+            margin-right: 10rem;
+        }
+
+        &__frame {
+            margin-bottom: 1.5rem;
+        }
+
+        &__title {
+            align-self: flex-start;
+            text-align: left;
+            max-width: 80%;
+            font-size: 2.5rem;
+            line-height: 3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        &__description {
+            font-size: 1.375rem;
+            line-height: 2rem;
+            margin-bottom: 3.125rem;
+
+            &::after {
+                bottom: -1.6875rem;
+            }
+        }
+
+        &__duration {
+            margin-bottom: 1.5rem;
+        }
+
+        &__controls {
+            justify-content: flex-start;
+        }
+
+        &__btn {
+            width: 188px;
+
+            &--buy {
+                width: 198px;
+                margin-right: 2.8125rem;
+
+                &::before {
+                    width: 208px;
+                    height: 46px;
+                }
+
+                &::after {
+                    right: 2.5rem;
+                }
+            }
+        }
+    }
+}
+
 @include min-screen(1440px) {
     .now {
         height: 100vh;
@@ -293,6 +362,7 @@
         }
 
         &__wrapper {
+            max-width: 100%;
             --width: calc(100% - 1200px);
             padding-left: calc(var(--width) / 2);
             padding-right: calc(var(--width) / 2);
@@ -304,8 +374,8 @@
                 'info poster'
             ;
 
-            grid-template-columns: 490px 1fr;
-            grid-column-gap: 11rem;
+            grid-template-columns: 600px 440px;
+            grid-column-gap: 8rem;
 
             z-index: 2;
         }
@@ -323,6 +393,7 @@
         &__frame {
             grid-area: poster;
             max-width: 100%;
+            padding-bottom: 133.33333333333334%;
         }
 
         &__info {

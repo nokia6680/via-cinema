@@ -176,6 +176,44 @@
     }
 }
 
+@include min-screen(768px) {
+    .about {
+        height: 100vh;
+        padding: 4.375rem 0 17.375rem 0;
+        background-image: url('../images/content/about-bg-lg.jpg');
+        justify-content: flex-start;
+
+        &__logo {
+            width: 260px;
+            height: 104px;
+            margin-bottom: 3.375rem;
+        }
+
+        &__intro {
+            font-size: 1.375rem;
+            line-height: 2rem;
+            text-align: center;
+            max-width: 688px;
+
+            margin-bottom: 1.875rem;
+        }
+
+        &__description {
+            font-size: 1.375rem;
+            line-height: 2rem;
+            text-align: center;
+            max-width: 688px;
+            margin-bottom: 3.75rem;
+        }
+
+        &__frame {
+            width: 510px;
+            height: 200px;
+            bottom: -1.25rem;
+        }
+    }
+}
+
 @include min-screen(1440px) {
     .about {
         height: 100vh;
@@ -266,9 +304,11 @@
             font-size: 0.875rem;
             line-height: 1.25rem;
             margin-bottom: 1.5rem;
+            text-align: left;
         }
 
         &__description {
+            text-align: left;
             font-size: 0.875rem;
             line-height: 1.25rem;
             margin-bottom: 3.125rem;
