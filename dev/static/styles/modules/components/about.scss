@@ -178,7 +178,9 @@
 
 @include min-screen(768px) {
     .about {
-        height: 100vh;
+        min-height: 100%;
+        height: -webkit-fill-available;
+        height: calc(var(--vh, 1vh) * 100);
         padding: 4.375rem 0 17.375rem 0;
         background-image: url('../images/content/about-bg-lg.jpg');
         justify-content: flex-start;
@@ -214,9 +216,8 @@
     }
 }
 
-@include min-screen(1440px) {
+@include min-screen(1366px) {
     .about {
-        height: 100vh;
         padding: 8rem 0 3rem 0;
         background-image: url('../images/content/about-bg-lg.jpg');
 

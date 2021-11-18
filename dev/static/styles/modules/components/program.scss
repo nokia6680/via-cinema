@@ -211,9 +211,11 @@
     }
 }
 
-@include min-screen(1440px) {
+@include min-screen(1366px) {
     .program {
-        height: 100vh;
+        min-height: 100%;
+        height: -webkit-fill-available;
+        height: calc(var(--vh, 1vh) * 100);
         padding: 3.75rem 0;
 
         &__wrapper {
@@ -261,6 +263,10 @@
         &__item {
             padding-bottom: 2.25rem;
             margin-bottom: 2.25rem;
+
+            &:last-of-type {
+                display: none;
+            }
         }
 
         &__head {

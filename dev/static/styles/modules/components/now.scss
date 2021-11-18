@@ -297,7 +297,7 @@
     }
 }
 
-@include min-screen(1440px) {
+@include min-screen(1366px) {
     .now {
         height: 100vh;
         background-image: url('../images/content/now-bg-lg.jpg');
