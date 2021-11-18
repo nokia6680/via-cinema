@@ -299,7 +299,7 @@
 
 @include min-screen(1366px) {
     .now {
-        height: 100vh;
+        height: 100%;
         background-image: url('../images/content/now-bg-lg.jpg');
 
         padding: 6.625rem 0 4.625rem 0;
